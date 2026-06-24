@@ -298,10 +298,10 @@ export default function Home() {
                 {[...fistSkills, ...fistSkills].map(({ title, svg }, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-center gap-10 max-lg:gap-5 max-sm:gap-2 shrink-0 py-5 grayscale-85 hover:grayscale-0 hover:scale-105 main-transition"
+                    className="flex items-center justify-center gap-10 max-lg:gap-5 max-sm:gap-2 shrink-0 py-5 grayscale-85 max-sm:grayscale-0 hover:grayscale-0 hover:scale-105 main-transition"
                   >
                     <div>
-                      <svg className="text-gray-400 group-hover:text-white main-transition">
+                      <svg className="text-gray-400 max-sm:text-white group-hover:text-white main-transition">
                         <use href={`#${svg}`}></use>
                       </svg>
                     </div>
@@ -318,10 +318,10 @@ export default function Home() {
                   ({ title, svg }, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-center gap-10 max-lg:gap-5 max-sm:gap-2 shrink-0 py-5 grayscale-85 hover:grayscale-0 hover:scale-105 main-transition group"
+                      className="flex items-center justify-center gap-10 max-lg:gap-5 max-sm:gap-2 shrink-0 py-5 grayscale-85 max-sm:grayscale-0 hover:grayscale-0 hover:scale-105 main-transition group"
                     >
                       <div>
-                        <svg className="text-gray-400 group-hover:text-white main-transition">
+                        <svg className="text-gray-400 max-sm:text-white group-hover:text-white main-transition">
                           <use href={`#${svg}`}></use>
                         </svg>
                       </div>

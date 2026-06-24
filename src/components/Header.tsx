@@ -22,7 +22,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
         return;
       }
 
-      if (currentScrollY < 150) {
+      if (currentScrollY < 100) {
         setIsHeaderShow(true);
         lastScrollY = currentScrollY;
         return;
@@ -30,7 +30,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
       const scrollDifference = currentScrollY - lastScrollY;
 
-      if (Math.abs(scrollDifference) < 50) {
+      if (Math.abs(scrollDifference) < 20) {
         return;
       }
 
@@ -60,10 +60,6 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
         }
       }
     };
-
-    window.addEventListener("scroll", () => {
-      console.log(window.scrollY);
-    });
 
     window.addEventListener("click", handleClick);
     return () => {
