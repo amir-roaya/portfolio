@@ -1,26 +1,165 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+    font-family: "poppins medium";
+    src: local("poppins medium"), url("../../public/fonts/poppins-medium-webfont.woff") format("woff");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+    font-family: "poppins semibold";
+    src: local("poppins semibold"), url("../../public/fonts/poppins-semibold-webfont.woff") format("woff");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+    font-family: "Preahvihear Regular";
+    src: local("Preahvihear Regular"), url("../../public/fonts/Preahvihear-Regular.woff") format("woff");
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+    --color-text-color: #7127BA;
+    --font-poppins-medium: "poppins medium";
+    --font-poppins-semibold: "poppins semibold";
+    --shadow-menu: 0 1px 8px #fff;
+    --shadow-menu-mobile: 0px 0px 12px #fff;
+    --animate-scroll: scroll 18s linear infinite;
+    --animate-scroll-lg: "scroll-lg" 18s linear infinite;
+    --animate-scroll-sm: "scroll-sm" 18s linear infinite;
+    --animate-scroll-reverse: "scroll-reverse" 18s linear infinite;
+    --animate-scroll-lg-reverse: "scroll-lg-reverse" 18s linear infinite;
+    --animate-scroll-sm-reverse: "scroll-sm-reverse" 18s linear infinite;
+}
+
+@layer base {
+    body {
+        @apply overflow-x-hidden text-white bg-[#0f061b];
+        font-family: "Preahvihear Regular";
+    }
+
+    svg {
+        @apply w-8 h-8;
+    }
+}
+
+@layer components {
+    .container {
+        @apply mx-auto px-4;
+    }
+
+    .cover {
+        @apply hidden max-sm:block fixed inset-0 -z-10 opacity-0 main-transition;
+        background-color: rgba(1, 1, 1, 0.5);
+    }
+
+    .cover--open {
+        @apply z-10 opacity-100;
+    }
+
+    .shape {
+        @apply absolute -z-1 rounded-[100%] top-[-110%] left-[26%] blur-[150px] w-150 h-175 max-sm:w-100 max-sm:h-125;
+        background: radial-gradient(circle, rgba(82, 26, 135, 1) 0%, rgb(25, 7, 66) 100%);
+    }
+
+    .image-chape {
+        @apply absolute -z-1 rounded-[100%] blur-[80px] top-[25%] left-[32%] max-lg:left-[16%] w-62.5 h-62.5 max-sm:w-37.5 max-sm:h-37.5;
+        background: radial-gradient(circle, rgba(255, 255, 255, 1) 18%, rgba(67, 67, 67, 1) 100%);
+    }
+
+    .image-shape-2 {
+        @apply absolute -z-2 rounded-[100%] blur-[150px] top-[-60%] left-[12%] w-150 h-175 max-lg:left-[2%] max-sm:w-100 max-sm:h-125;
+        background: radial-gradient(circle, rgba(82, 26, 135, 1) 0%, rgb(25, 7, 66) 100%);
+    }
+
+    .titles {
+        @apply mb-14 max-md:mb-10 text-5xl font-poppins-semibold text-center tracking-widest max-sm:text-4xl max-[30rem]:text-3xl;
+    }
+
+    .projects-wrapper {
+        @apply grid gap-10 justify-center justify-items-center;
+        grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    }
+
+    .projects-shape {
+        @apply absolute -z-1 rounded-[100%] top-[-74%] left-[26%] max-xl:top-[-20%] max-xl:left-[26%] max-sm:top-[-4%] max-sm:left-[4%] blur-[150px] w-150 h-175 max-sm:w-100 max-sm:h-125;
+        background: radial-gradient(circle, rgba(82, 26, 135, 1) 0%, rgb(25, 7, 66) 100%);
+    }
+}
+
+
+@utility main-transition {
+    transition: all 300ms ease-out;
+}
+
+@utility menu-transition {
+    transition: all 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@utility header-transition {
+    transition: all 250ms ease-out;
+}
+
+
+@utility demo-btn-gradient {
+    background: linear-gradient(90deg, rgba(248, 227, 255, 1) 0%, rgba(93, 14, 115, 1) 100%);
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-51.7%);
+    }
+}
+
+@keyframes scroll-lg {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50.4%);
+    }
+}
+
+@keyframes scroll-sm {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-49.9%);
+        ;
+    }
+}
+
+@keyframes scroll-reverse {
+    from {
+        transform: translateX(-51.7%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes scroll-lg-reverse {
+    from {
+        transform: translateX(-50.4%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes scroll-sm-reverse {
+    from {
+        transform: translateX(-49.9%);
+    }
+
+    to {
+        transform: translateX(0);
+        ;
+    }
 }
