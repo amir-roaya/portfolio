@@ -73,11 +73,11 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
   return (
     <header
-      className={`bg-[#230f3d] max-md:h-24 h-28 fixed top-0 left-0 right-0 w-full z-15 shadow-menu ${isHeaderShow ? "" : "translate-y-[-62%]"} header-transition`}
+      className={`bg-[#230f3d] max-md:h-24 h-28 fixed top-0 left-0 right-0 z-15 shadow-menu ${isHeaderShow ? "" : "translate-y-[-62%]"} header-transition`}
     >
       <div className="container">
         <nav className="font-poppins-medium flex justify-between items-center max-md:h-24 h-28 text-xl max-lg:text-[16px]">
-          <p className="select-none hover:skew-3 transition-all">
+          <p className="select-none hover:skew-3 transition-all overflow-x-hidden">
             &lt;Dev /&gt;
           </p>
 
@@ -86,7 +86,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
               <Link
                 className="hover:text-text-color main-transition"
                 href=""
-                onClick={() => scrollByAmount(120)}
+                onClick={() => scrollByAmount(139)}
               >
                 Home
               </Link>
@@ -124,7 +124,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
             <li>
               <Link
-                onClick={() => scrollByAmount(3253)}
+                onClick={() => scrollByAmount(3600)}
                 className="hover:text-text-color main-transition"
                 href=""
               >
@@ -140,7 +140,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
               <Link
                 className="hover:text-text-color main-transition mobile-menu"
                 href=""
-                onClick={() => scrollByAmount(74)}
+                onClick={() => scrollByAmount(93)}
               >
                 Home
               </Link>
@@ -148,7 +148,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
             <li>
               <Link
-                onClick={() => scrollByAmount(820)}
+                onClick={() => scrollByAmount(761)}
                 className="hover:text-text-color main-transition mobile-menu"
                 href=""
               >
@@ -158,7 +158,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
             <li>
               <Link
-                onClick={() => scrollByAmount(1407)}
+                onClick={() => scrollByAmount(1299)}
                 className="hover:text-text-color main-transition mobile-menu"
                 href=""
               >
@@ -168,7 +168,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
             <li>
               <Link
-                onClick={() => scrollByAmount(1912)}
+                onClick={() => scrollByAmount(1799)}
                 className="hover:text-text-color main-transition mobile-menu"
                 href=""
               >
@@ -178,7 +178,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
             <li>
               <Link
-                onClick={() => scrollByAmount(2406)}
+                onClick={() => scrollByAmount(2562)}
                 className="hover:text-text-color main-transition mobile-menu"
                 href=""
               >
@@ -189,7 +189,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
           <button
             type="button"
-            className="cursor-pointer hidden max-sm:block z-20"
+            className="cursor-pointer hidden max-sm:block"
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
             <svg>

@@ -31,7 +31,7 @@
 
 @layer base {
     body {
-        @apply overflow-x-hidden text-white bg-[#0f061b];
+        @apply text-white bg-[#0f061b] overflow-x-clip;
         font-family: "Preahvihear Regular";
     }
 
@@ -74,12 +74,17 @@
     }
 
     .projects-wrapper {
-        @apply grid gap-10 justify-center justify-items-center;
-        grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+        @apply grid gap-10 justify-center;
+        grid-template-columns: repeat(auto-fit, minmax(320px, auto));
     }
 
     .projects-shape {
-        @apply absolute -z-1 rounded-[100%] top-[-74%] left-[26%] max-xl:top-[-20%] max-xl:left-[26%] max-sm:top-[-4%] max-sm:left-[4%] blur-[150px] w-150 h-175 max-sm:w-100 max-sm:h-125;
+        @apply absolute -z-1 rounded-[100%] blur-[150px] w-150 h-175 max-sm:w-100 max-sm:h-125 top-[16%] left-[36%];
+        background: radial-gradient(circle, rgba(82, 26, 135, 1) 0%, rgb(25, 7, 66) 100%);
+    }
+
+    .contect-shape {
+        @apply absolute -z-1 rounded-[100%] blur-[150px] w-150 h-175 max-sm:w-100 max-sm:h-125 top-[-8%] left-[-5%];
         background: radial-gradient(circle, rgba(82, 26, 135, 1) 0%, rgb(25, 7, 66) 100%);
     }
 }
@@ -96,7 +101,6 @@
 @utility header-transition {
     transition: all 250ms ease-out;
 }
-
 
 @utility demo-btn-gradient {
     background: linear-gradient(90deg, rgba(248, 227, 255, 1) 0%, rgba(93, 14, 115, 1) 100%);
@@ -161,5 +165,11 @@
     to {
         transform: translateX(0);
         ;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    .projects-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(260px, auto));
     }
 }
